@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
+a {
+  color: #fff;
+}
+
+#container {
+  width: 99vw;
+  overflow-x: hidden;
+}
+
+/* +++++ Landing Page +++++ */
+
+#entry {
+  height: 100vh;
+  background: url(../images/heroBG.jpg);
+  background-size: cover;
+}
+
+.logo {
+  height: 22vh;
+  margin-left: 2vw;
+}
+
+.cooling {
+  position: absolute;
+  bottom: 1vh;
+  left: 3vw;
+  height: 80vh;
+}
+
+.mainHero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+}
+.mobileHero {
+  display: none;
+}
+
+.heroContent {
+  text-align: center;
+  position: absolute;
+  top: 40vh;
+  left: 18vw;
+}
+
+.heroContent input {
+  width: 150px;
+  height: 100px;
+  margin: 10px 0;
+  border: solid 2px #696969;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 72px;
+  color: #000;
+}
+
+.heroContent .birthYear {
+  width: 220px;
+}
+
+.button {
+  background-color: #da291c;
+  height: 60px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
+  line-height: 60px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* +++++  HOME PAGE +++++ */
+
+.homeHeroContent {
+  text-align: left;
+  position: absolute;
+  top: 40vh;
+  left: 18vw;
+}
+.homeHeroContent .button {
+  margin: 10px;
+}
+.dropMenu {
+  display: none;
+}
+.mainNav {
+  position: absolute;
+  top: 9vh;
+  left: 18vw;
+}
+
+.mainNav ul li {
+  display: inline-block;
+  padding: 20px;
+  font-size: 36px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.mainNav ul li:hover {
+  transform: scale(1.05);
+}
+
+.active {
+  background: url(../images/stroke.svg) no-repeat center;
+  background-size: 120px;
+}
+
+.slogan {
+  width: 60vw;
+  font-size: 72px;
+  text-align: left;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* ++++++++end of Header +++++ */
+.slider {
+  background-color: white;
+  height: 540px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  background: url(../images/icons/arrow.svg) no-repeat;
+  background-size: contain;
+  margin: 0 20px;
+  height: 200px;
+  width: 100px;
+}
+
+.arrow:last-of-type {
+  transform: rotate(180deg);
+}
+.counters {
+  width: 50px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: flex-end;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 2px solid #696969;
+  border-radius: 50%;
+  align-self: ;
+}
+
+.dot:first-of-type {
+  background-color: #da291c;
+}
+
+/* ========== TABLET SIZE============= */
+@media screen and (max-width: 1050px) {
+  .homeHeroContent {
+    width: 30vw;
+  }
+  .slogan {
+    font-size: 48px;
+  }
+  .mainNav ul li {
+    font-size: 24px;
+  }
+}
+
+/* ============= MOBILE SIZE =============*/
+@media screen and (max-width: 675px) {
+  .heroContent {
+    left: 11vw;
+  }
+  .heroContent input {
+    width: 100px;
+    height: 60px;
+    font-size: 48px;
+  }
+  .heroContent .birthYear {
+    width: 170px;
+  }
+
+  .mainHero {
+    display: none;
+  }
+
+  .mainNav {
+    display: none;
+  }
+
+  .dropMenu {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    right: 5vw;
+    top: 5vh;
+    background: url(../images/icons/hamburger.png) no-repeat center;
+  }
+  .dropMenu:hover {
+    cursor: pointer;
+  }
+  .mobileHero {
+    display: block;
+    margin: -80px 0 0 auto;
+  }
+  .button {
+    float: right;
+  }
+  .homeHeroContent {
+    display: none;
+  }
+}
