@@ -19,17 +19,17 @@ a {
   color: #fff;
 }
 
-#container {
-  width: 99vw;
-  overflow-x: hidden;
-}
-
 /* +++++ Landing Page +++++ */
 
-#entry {
+header {
   height: 100vh;
   background: url(../images/heroBG.jpg);
   background-size: cover;
+}
+
+#container {
+  width: 99vw;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -46,9 +46,10 @@ a {
 
 .mainHero {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  height: 100vh;
+  max-height: 100vh;
+  max-width: 70vw;
 }
 .mobileHero {
   display: none;
@@ -77,6 +78,7 @@ a {
 }
 
 .button {
+  display: block;
   background-color: #da291c;
   height: 60px;
   width: 200px;
@@ -90,7 +92,6 @@ a {
 /* +++++  HOME PAGE +++++ */
 
 .homeHeroContent {
-  text-align: left;
   position: absolute;
   top: 40vh;
   left: 18vw;
@@ -166,42 +167,136 @@ a {
   background-color: #fff;
   border: 2px solid #696969;
   border-radius: 50%;
-  align-self: ;
 }
 
 .dot:first-of-type {
   background-color: #da291c;
 }
 
+/* =============== End Slider ================== */
+.subNav {
+  background-color: #da291c;
+  width: 100%;
+  height: 540px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.subNav div {
+  width: 40%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5%;
+}
+
+.subNav div:first-of-type {
+  border-right: 1px solid #696969;
+}
+
+.subNav img {
+  margin: 10px auto;
+  max-width: ;
+  height: 200px;
+}
+
+.subNav h2 {
+  margin: 10px auto;
+  font-size: 36px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.subNav p {
+  margin: 10px auto;
+  width: 80%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #696969;
+}
+
+/* ============ Footer Start ========== */
+
+.mainFooter {
+  background-color: #696969;
+  /*   height: 360px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 60px 0;
+  flex-wrap: wrap;
+}
+
+.column {
+  line-height: 48px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.social img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.mainFooter input {
+  line-height: 30px;
+  border: 0;
+  padding: 0 0 0 5px;
+  width: 80%;
+  border: 1px solid #fff;
+}
+
+#subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#subscribe span {
+  background-color: #696969;
+  color: #fff;
+  width: 20%;
+  line-height: 30px;
+  border: 1px solid #fff;
+  text-align: center;
+}
+#subscribe span:hover {
+  cursor: pointer;
+}
+
 /* ========== TABLET SIZE============= */
 @media screen and (max-width: 1050px) {
   .homeHeroContent {
-    width: 30vw;
+    right: 5vw;
+    left: unset;
   }
-  .slogan {
-    font-size: 48px;
-  }
-  .mainNav ul li {
-    font-size: 24px;
-  }
-}
 
-/* ============= MOBILE SIZE =============*/
-@media screen and (max-width: 675px) {
-  .heroContent {
-    left: 11vw;
-  }
-  .heroContent input {
-    width: 100px;
-    height: 60px;
-    font-size: 48px;
-  }
-  .heroContent .birthYear {
-    width: 170px;
+  .button {
+    float: right;
   }
 
   .mainHero {
     display: none;
+  }
+
+  .mobileHero {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 85vh;
   }
 
   .mainNav {
@@ -217,17 +312,44 @@ a {
     top: 5vh;
     background: url(../images/icons/hamburger.png) no-repeat center;
   }
-  .dropMenu:hover {
-    cursor: pointer;
+
+  .slogan {
+    font-size: 48px;
+    text-align: right;
   }
-  .mobileHero {
-    display: block;
-    margin: -80px 0 0 auto;
+
+  .subNav {
+    flex-direction: column;
+    height: auto;
   }
-  .button {
-    float: right;
+  .subNav div {
+    width: 100%;
   }
+
+  .mainFooter {
+    padding: 30px 0;
+    justify-content: space-evenly;
+  }
+  .column:last-of-type {
+    display: none;
+  }
+}
+
+/* ============= MOBILE SIZE =============*/
+@media screen and (max-width: 675px) {
   .homeHeroContent {
     display: none;
+  }
+  .heroContent input {
+    width: 100px;
+    height: 60px;
+    font-size: 48px;
+  }
+  .heroContent .birthYear {
+    width: 170px;
+  }
+
+  .dropMenu:hover {
+    cursor: pointer;
   }
 }

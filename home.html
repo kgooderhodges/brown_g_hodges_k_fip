@@ -11,16 +11,23 @@
 	<[end if]-->
   </head>
   <body id="container">
-    <header id="entry">
-      <img src="images/logo.png" class="logo" />
+    <header>
+      <a href="index.html"><img src="images/logo.png" class="logo"/></a>
       <img src="images/cooling.png" class="cooling" />
+
+      <!--  need to change img -->
       <img src="images/circleBeerBG.png" alt="" class="mainHero" />
       <img
         src="images/Red-Stripe-Lager-Cenital4-345x655.png"
         alt=""
         class="mobileHero"
       />
+      <!--  need to change img -->
+
+      <!-- need to make dropdown -->
       <div class="dropMenu"></div>
+      <!-- need to make dropdown -->
+
       <nav class="mainNav">
         <ul>
           <li class="active"><a href="home.html">Home</a></li>
@@ -30,12 +37,14 @@
         </ul>
       </nav>
     </header>
+
     <div class="homeHeroContent">
       <p class="slogan">
         A Spoonful of Sugar to Help the Medicine Go Down
       </p>
-      <a href="beer.html"><div class="button">2020 Collection</div></a>
+      <a href="beer.html" class="button">2020 Collection</a>
     </div>
+
     <section class="slider">
       <div class="arrow"></div>
       <div class="counters">
@@ -45,6 +54,65 @@
       </div>
       <div class="arrow"></div>
     </section>
+
+    <section class="subNav">
+      <div class="forMoms">
+        <img src="images/icons/babyFeet.svg" alt="" />
+        <h2>For Moms</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+          perspiciatis odit dolorem animi? Laboriosam illo atque
+        </p>
+      </div>
+
+      <div class="aboutUs">
+        <img src="images/Flag-map_of_Jamaica.png" alt="" />
+        <!--  need to change img -->
+        <h2>About Us</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+          perspiciatis odit dolorem animi? Laboriosam illo atque
+        </p>
+      </div>
+    </section>
+
+    <footer class="mainFooter">
+      <div class="column">
+        <a href="">About us</a>
+        <a href="">Contact</a>
+        <a href="">Terms & Conditions</a>
+      </div>
+
+      <div class="column">
+        <a class="social" href="">
+          <img src="images/icons/facebook.svg" alt="" />
+          <p>Facebook</p>
+        </a>
+
+        <a class="social" href="">
+          <img src="images/icons/twitter.svg" alt="" />
+          <p>Twitter</p>
+        </a>
+
+        <a class="social" href="">
+          <img src="images/icons/instagram.svg" alt="" />
+          <p>Instagram</p>
+        </a>
+      </div>
+      <div class="column">
+        <p>Subscribe to Our Newsletter</p>
+        <div id="subscribe">
+          <input type="text" placeholder="Email Address" />
+          <span>OK</span>
+        </div>
+      </div>
+      <div class="column">
+        497 Evergreen Rd. <br />
+        Roseville, CA 95673 <br />
+        +44 345 678 903 <br />
+        adobexd@mail.com
+      </div>
+    </footer>
 
     <script src="js/main.js"></script>
   </body>
