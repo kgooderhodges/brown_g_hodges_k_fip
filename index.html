@@ -11,25 +11,27 @@
 	<[end if]-->
   </head>
   <body id="container">
-    <section id="entry">
-      <img src="images/cooling.png" class="cooling" />
-      <img src="images/logo.png" class="logo" />
-      <img src="images/circleBeerBG.png" alt="" class="mainHero" />
+    <header class="homeHeader">
+      <div class="logo"></div>
+      <div class="cooling"></div>
+      <div class="mainHero"></div>
 
       <div class="heroContent">
-        <p>
-          You must be 19 years old to proceed <br />
-          Please enter your date of birth below
-        </p>
+        <div>
+          <p>
+            You must be 19 years old to proceed <br />
+            Please enter your date of birth below
+          </p>
 
-        <form action="#">
-          <input type="text" placeholder="MM" />
-          <input type="text" placeholder="DD" />
-          <input type="text" class="birthYear" placeholder="YYYY" />
-        </form>
-        <a href="home.html" class="button">Enter</a>
+          <form action="#">
+            <input type="text" placeholder="MM" />
+            <input type="text" placeholder="DD" />
+            <input type="text" class="birthYear" placeholder="YYYY" />
+          </form>
+          <a href="home.html" class="button">Enter</a>
+        </div>
       </div>
-    </section>
+    </header>
 
     <script src="js/main.js"></script>
   </body>
