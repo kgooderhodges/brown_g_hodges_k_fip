@@ -1,123 +1,192 @@
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tucks</title>
-  <link rel="stylesheet" type="text/css" href="css/reset.css" />
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <!--[if lt IE 9]>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tucks</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--[if lt IE 9]>
 		<script src="js/htm5shiv.js"></script>
 	<[end if]-->
-</head>
+  </head>
 
-<body>
-  <header class="headerSm">
-    <!--  need to change img -->
-    <a href="index.html"><img src="images/logo.png" class="logo"/></a>
-    <img src="images/circleBeerBG.png" alt="" class="subHero" />
-    <img class="pageTitle" src="images/2020beer.svg" alt="" />
-    <!--  need to change img -->
+  <body>
+    <header class="headerSm">
+      <!--  need to change img -->
+      <div class="subHero"></div>
+      <a class="logo" href="index.html"></a>
+      <div class="pageTitle"></div>
 
-    <!-- need to make dropdown -->
-    <div class="dropMenu"></div>
-    <!-- need to make dropdown -->
+      <!--  need to change img -->
 
-    <nav class="mainNav">
-      <ul>
-        <li class="active"><a href="home.html">Home</a></li>
-        <li><a href="home.html">Beer</a></li>
-        <li><a href="home.html">For Moms</a></li>
-        <li><a href="home.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
+      <!-- need to make dropdown -->
+      <div class="dropMenu"></div>
+      <!-- need to make dropdown -->
 
-<div id="container">
+      <nav class="mainNav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li class="active"><a href="home.html">Beer</a></li>
+          <li><a href="home.html">For Moms</a></li>
+          <li><a href="home.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="beerContent">
-    <div class="firstPick hide">
+    <!-- <div id="container"> -->
 
-        
+    <section class="beerContent">
+      <div class="firstPick hide">
         <div class="largeOption">
-            <img
+          <img
             id="lager"
             src="images/Red-Stripe-Lager-Cenital4-345x655.png"
             alt=""
-            />
+          />
         </div>
         <div class="largeOption">
-            <img
+          <img
             id="light"
             src="images/Red-Stripe-Lager-Cenital4-345x655.png"
             alt=""
-            />
+          />
         </div>
         <div class="largeOption">
-            <img
+          <img
             id="zero"
             src="images/Red-Stripe-Lager-Cenital4-345x655.png"
             alt=""
-            />
+          />
         </div>
-    </div>
-    
-    <div class="infoGraphicCon">
-        <div class="smPick">
-            <img
-            src="images/Red-Stripe-Lager-Cenital4-345x655.png"
-            alt=""
-            class="beerPick"
-            />
+      </div>
+
+      <div class="infoGraphicCon">
+        <div class="smPick lagerBG"></div>
+        <div class="smPick lightBG"></div>
+        <div class="smPick zeroBG"></div>
+        <div class="arrow arrowL"></div>
+        <div class="arrow arrowR"></div>
+
+        <!--         <img class="pum1" src="images/icons/targetLine.svg" alt="" />
+        <div class="popUpMobile "></div> -->
+
+        <div class="popUpMobileDesc">
+          <div class="popUpMobile pum2"></div>
+          <div class="popUpMobile pum3"></div>
+          <h3>Lorem ipsum dolor sit.</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+            eos rerum dolores perspiciatis exercitationem est.
+          </p>
         </div>
-        <div class="smPick">
-            <img
-            src="images/Red-Stripe-Lager-Cenital4-345x655.png"
-            alt=""
-            class="beerPick"
-            />
-        </div>
-        <div class="smPick">
-            <img
-            src="images/Red-Stripe-Lager-Cenital4-345x655.png"
-            alt=""
-            class="beerPick"
-            />
-        </div>
-        
-        
+
         <div class="mainContent">
-            <div class="arrowCon">
-              <div class="arrow"></div>
-              <div class="arrow"></div>
-            </div>
-            <div class="targetCon">
-            <div class="target">
-                <img class="target1" src="images/icons/target.svg" alt="" />
-                <div class="popUp popUp1 ">
-                    <img src="images/icons/targetLine.svg" alt="line">
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eveniet sequi earum. In, obcaecati esse?</p>
+          <div class="targetCon">
+            <div id="target1" class="target">
+              <div id="popUp1" class="popUp">
+                <div>
+                  <h3>Who the Tuck?</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Maxime eveniet sequi earum. In, obcaecati esse?
+                  </p>
                 </div>
+              </div>
             </div>
-            
-            <div class="target">
-                <img class="target2" src="images/icons/target.svg" alt="" />
-                <div class="popUp popUp2">
-                    <img src="images/icons/targetLineRight.svg" alt="line">
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eveniet sequi earum. In, obcaecati esse?</p>
+
+            <div id="target2" class="target">
+              <div id="popUp2" class="popUp">
+                <div>
+                  <h3>Lorem, ipsum dolor.</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Maxime eveniet sequi earum. In, obcaecati esse?
+                  </p>
                 </div>
+              </div>
             </div>
-            
-            <div class="target">
-                <img class="target3" src="images/icons/target.svg" alt="" />
-                <div class="popUp popUp3">
-                    <img src="images/icons/targetLine.svg" alt="line">
-                    <h3>Lorem, ipsum dolor.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eveniet sequi earum. In, obcaecati esse?</p>
+
+            <div id="target3" class="target">
+              <div id="popUp3" class="popUp">
+                <div>
+                  <h3>Lorem, ipsum dolor.</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Maxime eveniet sequi earum. In, obcaecati esse?
+                  </p>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    </div></div> 
-  </section>
-</body>
+
+        <div class="pum pum1"></div>
+        <div class="pum pum2"></div>
+        <div class="pum pum3"></div>
+      </div>
+    </section>
+
+    <section class="whereToBuy">
+      <h2>Where To Buy</h2>
+      <div class="whereCon">
+        <div>
+          I have no idea what to put here <br />
+          Walmart Store Logo?
+        </div>
+        <div>
+          I have no idea what to put here <br />
+          Beer Store Logo?
+        </div>
+        <div>
+          I have no idea what to put here <br />
+          LCBO Logo?
+        </div>
+        <div>
+          I have no idea what to put here <br />
+          LCBO Logo?
+        </div>
+      </div>
+    </section>
+
+    <footer class="mainFooter">
+      <div class="column">
+        <a href="">About us</a>
+        <a href="">Contact</a>
+        <a href="">Terms & Conditions</a>
+      </div>
+
+      <div class="column">
+        <a class="social" href="">
+          <img src="images/icons/facebook.svg" alt="" />
+          <p>Facebook</p>
+        </a>
+
+        <a class="social" href="">
+          <img src="images/icons/twitter.svg" alt="" />
+          <p>Twitter</p>
+        </a>
+
+        <a class="social" href="">
+          <img src="images/icons/instagram.svg" alt="" />
+          <p>Instagram</p>
+        </a>
+      </div>
+      <div class="column">
+        <p>Subscribe to Our Newsletter</p>
+        <div id="subscribe">
+          <input type="text" placeholder="Email Address" />
+          <span>OK</span>
+        </div>
+      </div>
+      <div class="column">
+        497 Evergreen Rd. <br />
+        Roseville, CA 95673 <br />
+        +44 345 678 903 <br />
+        adobexd@mail.com
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
