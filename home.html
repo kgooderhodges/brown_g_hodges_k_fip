@@ -41,31 +41,36 @@
       </div>
     </header>
     <section class="slider">
-      <div class="arrow arrowL"></div>
+      <div data-index="-1" class="arrow arrowL"></div>
+      <div data-index="1"class="arrow arrowR"></div>
 
-      <div class="sliderImg"></div>
-      <!-- Change BG by adding class with JS  -->
-
-      <div class="counters">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+      <div class="sliderImgCon">
+        <div class="sliderImg">
+          <div><img src="images/Red-Stripe-Lager-Cenital4-345x655.png" alt=""></div>
+          <div><img src="images/Red-Stripe-Lager-Cenital4-345x655.png" alt=""></div>
+          <div><img src="images/Red-Stripe-Lager-Cenital4-345x655.png" alt=""></div>
+        </div>
       </div>
 
-      <div class="arrow arrowR"></div>
+      <div class="counters">
+        <div data-offset="0" class="dot dotOn"></div>
+        <div data-offset="1" class="dot"></div>
+        <div data-offset="2" class="dot"></div>
+      </div>
+
     </section>
 
     <section class="subNav">
-      <div class="forMoms">
+      <a href="forMoms.html" class="forMoms">
         <img src="images/icons/babyFeet.svg" alt="" />
         <h2>For Moms</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
           perspiciatis odit dolorem animi? Laboriosam illo atque
         </p>
-      </div>
+      </a>
 
-      <div class="aboutUs">
+      <a href="about.html" class="aboutUs">
         <img src="images/Flag-map_of_Jamaica.png" alt="" />
         <!--  need to change img -->
         <h2>About Us</h2>
@@ -73,7 +78,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
           perspiciatis odit dolorem animi? Laboriosam illo atque
         </p>
-      </div>
+      </a>
     </section>
 
     <footer class="mainFooter">

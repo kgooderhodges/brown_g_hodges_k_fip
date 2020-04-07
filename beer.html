@@ -15,8 +15,10 @@
     <header class="headerSm">
       <!--  need to change img -->
       <div class="subHero"></div>
+      <div class="pageTitle">
+        <p>2020 Beer</p>
+      </div>
       <a class="logo" href="index.html"></a>
-      <div class="pageTitle"></div>
 
       <!--  need to change img -->
 
@@ -31,97 +33,64 @@
           <li><a href="forMoms.html">For Moms</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
-      </nav>
+      </nav> 
     </header>
 
+    <section class="promoVideo">
+      <video src="assets/MainVideo.mp4" autoplay></video>
+    </section>
     <section class="beerContent">
-      <div class="firstPick hide">
-        <div class="largeOption">
-          <img
-            id="lager"
-            src="images/Red-Stripe-Lager-Cenital4-345x655.png"
-            alt=""
-          />
-        </div>
-        <div class="largeOption">
-          <img
-            id="light"
-            src="images/Red-Stripe-Lager-Cenital4-345x655.png"
-            alt=""
-          />
-        </div>
-        <div class="largeOption">
-          <img
-            id="zero"
-            src="images/Red-Stripe-Lager-Cenital4-345x655.png"
-            alt=""
-          />
-        </div>
-      </div>
-
       <div class="infoGraphicCon">
-        <div class="smPick lagerBG"></div>
-        <div class="smPick lightBG"></div>
-        <div class="smPick zeroBG"></div>
+        
+        <div data-index="0" class="smPick lagerBG"></div>
+        <div data-index="1" class="smPick lightBG"></div>
+        <div data-index="2" class="smPick zeroBG"></div>
+        
         <div class="arrow arrowL"></div>
         <div class="arrow arrowR"></div>
 
-        <!--         <img class="pum1" src="images/icons/targetLine.svg" alt="" />
-        <div class="popUpMobile "></div> -->
-
-        <div class="popUpMobileDesc">
-          <div class="popUpMobile pum2"></div>
-          <div class="popUpMobile pum3"></div>
-          <h3>Lorem ipsum dolor sit.</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            eos rerum dolores perspiciatis exercitationem est.
-          </p>
-        </div>
-
-        <div class="mainContent">
+        <div class="mainContent lagerBG">
           <div class="targetCon">
+
             <div id="target1" class="target">
-              <div id="popUp1" class="popUp">
-                <div>
-                  <h3>Who the Tuck?</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Maxime eveniet sequi earum. In, obcaecati esse?
-                  </p>
+              <div id="popUp1" class="popUp hide">
+                <div data-place="0">
+                  <h3>Who The Tuck?</h3>
+                  <p>Tucks Is medicating Cooling pads</p>
                 </div>
               </div>
             </div>
 
             <div id="target2" class="target">
-              <div id="popUp2" class="popUp">
-                <div>
-                  <h3>Lorem, ipsum dolor.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Maxime eveniet sequi earum. In, obcaecati esse?
-                  </p>
+              <div id="popUp2" class="popUp hide">
+                <div data-place="1">
+                  <h3>Why Stubby?</h3>
+                  <p>Classic Feel is stubby</p>
                 </div>
               </div>
             </div>
 
             <div id="target3" class="target">
-              <div id="popUp3" class="popUp">
-                <div>
-                  <h3>Lorem, ipsum dolor.</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Maxime eveniet sequi earum. In, obcaecati esse?
-                  </p>
+              <div id="popUp3" class="popUp hide">
+                <div data-place="2">
+                  <h3>How Cool is it?</h3>
+                  <p>It makes your butt pain go away</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="pum pum1"></div>
-        <div class="pum pum2"></div>
-        <div class="pum pum3"></div>
+        <div class="popUpMobileDesc">
+          <h3>Title Text</h3>
+          <p>
+            Paragraph Text consectetur adipisicing elit. Suscipit
+            eos rerum dolores perspiciatis exercitationem est.
+          </p>
+        </div>
+        <div id="pum1" class="pum hide"></div>
+        <div id="pum2" class="pum hide"></div>
+        <div id="pum3" class="pum hide"></div>
       </div>
     </section>
 
