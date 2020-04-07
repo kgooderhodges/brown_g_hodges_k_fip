@@ -6,6 +6,25 @@ a:active {
   text-decoration: none;
 }
 
+@font-face {
+	font-family: 'Veneer';
+	src: url('../includes/Veneer-webfont.eot');
+	src: url('../includes/Veneer-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../includes/Veneer.ttf') format('truetype'),
+		url('../includes/Veneer.svg#Veneer') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'VeneerExtras';
+	src: url('../includes/VeneerExtras-webfont.eot');
+	src: url('../includes/VeneerExtras-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../includes/VeneerExtras.ttf') format('truetype'),
+		url('../includes/VeneerExtras.svg#Veneer') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
   font-size: 1.5em;
@@ -42,10 +61,7 @@ header {
   overflow: hidden;
   min-height: 675px;
   display: grid;
-  grid-template: minmax(150px, 20%) repeat(3, 1fr) / minmax(220px, 20%) repeat(
-      5,
-      1fr
-    );
+  grid-template: minmax(150px, 20%) repeat(3, 1fr) / minmax(220px, 20%) 4fr 1fr 100px;
 }
 
 .logo {
@@ -118,7 +134,7 @@ header {
   transform: scale(1.05);
 }
 .homeHeroContent {
-  grid-area: 3/2/4/5;
+  grid-area: 3/2/-2/-3;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -143,14 +159,37 @@ header {
 /* *++++++++end of Header +++++ */
 
 .slider {
-  background-color: white;
   height: 540px;
   display: grid;
-  grid-template: 1fr 30px /50px 1fr 50px;
+  grid-template: 1fr 30px /3vw 1fr 3vw;
+}
+
+.sliderImgCon{
+  overflow:hidden;
+  position: relative;
+  grid-column: 2;
 }
 
 .sliderImg {
-  grid-column: 2;
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  left: 0;
+  bottom: 0;
+  transition: all 750ms ease-in-out ;
+}
+
+.sliderImg div{
+  height: 100%;
+  width: 100%;
+}
+.sliderImg img{
+  height: 100%;
+display: block;
+margin: 0 auto;
 }
 
 .arrow {
@@ -190,7 +229,7 @@ header {
   border-radius: 50%;
 }
 
-.dot:first-of-type {
+.dotOn {
   background-color: #da291c;
 }
 
@@ -207,7 +246,8 @@ header {
   align-items: center;
 }
 
-.subNav div {
+.subNav a {
+  cursor: pointer;
   width: 40%;
   height: 80%;
   display: flex;
@@ -222,7 +262,6 @@ header {
 
 .subNav img {
   margin: 10px auto;
-  max-width: ;
   height: 200px;
 }
 
@@ -302,7 +341,7 @@ header {
 .headerSm {
   height: 50vh;
   max-height: 540px;
-  min-height: 300px;
+  min-height: 350px;
 
   display: grid;
   grid-template: minmax(150px, 20%) 1fr / minmax(220px, 20%) 1fr 100px;
@@ -310,9 +349,18 @@ header {
   overflow: hidden;
 }
 .pageTitle {
+  font-family: 'Veneer', 'Franklin Gothic Medium', Arial, sans-serif;
+  text-transform: capitalize;
+  display: flex;
+  align-items: flex-end;
+  font-size: 170px;
   margin: 10px 30px;
-  grid-area: 2/1/-1/-1;
-  background: url(../images/2020beer.svg) bottom left/600px no-repeat;
+  grid-area: 1/1/-1/-1;
+  /* background: url(../images/2020beer.svg) bottom left/600px no-repeat; */
+}
+.pageTitle span {
+  font-family: 'VeneerExtras';
+  font-size: 200px;
 }
 
 .subHero {
@@ -322,6 +370,22 @@ header {
 
 /* *========= header end =========== */
 
+.promoVideo{
+  height: 75vh;
+  padding: 5px;
+  background: #A82017;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#991d13+0,a82017+50,a82017+50,991d13+100 */
+  background: #991d13; /* Old browsers */
+  background: -moz-linear-gradient(top,  #991d13 0%, #a82017 50%, #a82017 50%, #991d13 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #991d13 0%,#a82017 50%,#a82017 50%,#991d13 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #991d13 0%,#a82017 50%,#a82017 50%,#991d13 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#991d13', endColorstr='#991d13',GradientType=0 ); /* IE6-9 */
+
+}
+
 .beerContent {
   padding: 1vh 0;
   height: 98vh;
@@ -329,46 +393,24 @@ header {
   max-height: 1080px;
   max-width: 2000px;
 }
-.firstPick {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.lagerBG {
-  /*   background: url(../images/lager.jpg) no-repeat center; */
-  background: url(../images/Red-Stripe-Lager-Cenital4-345x655.png)
-    center/contain no-repeat;
+.lagerBG {background: red center/contain no-repeat;
+  /*   background: url(../images/lager.jpg) center/contain no-repeat; */
+  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
 }
-.lightBG {
-  /*   background-image: url(../images/light.jpg) no-repeat center; */
-  background: url(../images/Red-Stripe-Lager-Cenital4-345x655.png)
-    center/contain no-repeat;
+.lightBG {background: green center/contain no-repeat;
+  /*   background: url(../images/lager.jpg) center/contain no-repeat; */
+  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
 }
-.zeroBG {
-  /*   background-image: url(../images/zero.jpg) no-repeat center; */
-  background: url(../images/Red-Stripe-Lager-Cenital4-345x655.png)
-    center/contain no-repeat;
-}
-
-.largeOption:hover {
-  transition: ease-in-out 200ms;
-  border-bottom: 5px solid #696969;
-}
-.largeOption:hover img {
-  transition: all ease-in-out 200ms;
-  transform: translateY(-5px);
-  cursor: pointer;
+.zeroBG {background: blue center/contain no-repeat;
+  /*   background: url(../images/lager.jpg) center/contain no-repeat; */
+  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
 }
 
 .infoGraphicCon {
   margin: 0 auto;
   height: 100%;
   width: 99%;
-
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 4fr;
   grid-gap: 0.5em;
@@ -389,8 +431,6 @@ header {
 .mainContent {
   grid-column: 2;
   grid-row: 1/4;
-  background: url(../images/Red-Stripe-Lager-Cenital4-345x655.png) no-repeat
-    center;
   background-size: contain;
   display: flex;
   align-items: center;
@@ -485,14 +525,14 @@ header {
   min-height: 1200px;
   height: 100vw;
   background-color: #da291c;
-
   display: grid;
   grid-template-columns: 5% 5fr 1fr 1fr 1fr 1fr 5fr 5%;
-  grid-template-rows: 5% 2fr 2fr 1fr 2fr 2fr 1fr 4fr 5%;
+  grid-template-rows: 5% 2fr 2fr 1fr 2fr 2fr 1fr 5fr 5%;
 }
 
 .graphic{
-  padding:5%; 
+  max-height: 80%;
+  padding:40px; 
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -501,10 +541,10 @@ header {
 }
 .graphic img{
   max-width:60% ;
-  max-height: 60%; 
+  max-height: 60%;
 }
 .graphic5 img{
-  max-height: 250px;;
+  max-height: 100%;;
   max-width:100%;
 }
 .graphic h3{
@@ -512,18 +552,16 @@ header {
   font-size: 36px;
 }
 .graphic p{
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #696969;
 }
 
 .graphic1{
   grid-area: 2/2/4/4;
 }
-
 .graphic2{
   grid-area: 2/6/4/8;
 }
-
 .graphic3{
   grid-area: 5/2/7/4;
 }
@@ -540,7 +578,6 @@ header {
   left:-30px;
 }
 .lines {
-  transition: border ease-out 1s ;
   border-top: solid 10px #696969;
   position: relative;
 }
@@ -706,73 +743,25 @@ header {
 .submit:hover {
 	box-shadow: 0px 0px 8px rgba(0,0,0,.7)
 }
-/* .contact{
-  padding: 40px;
-}
-.contact h3 {
-  font-size: 2em;
-  margin-bottom: 40px ;
-  display: block;
-  color: #696969;
-}
-.contact input {
-  width: 300px;
-  border-radius: 10px;
-  margin: 10px;
-}
-.contactForm{
-  background-color: aquamarine;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 50vh;
-  min-height: 360px;
-}
-.contactForm > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.inqueryType {
-  display: flex;
-  flex-direction: column;
-
-}
-.inqueryBtn{
-  width: 200px;
-  background-color: #da291c;
-  margin: 10px 0;
-  padding: 14px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.contactDetails input{
-  padding: 14px 17px;
-}
-.message input{
-  display: flex;
-  height: 100%;
-} */
 
 
 /* !========== TABLET SIZE============= */
 
 @media screen and (max-width: 1050px) {
   .mainHero {
-    background: url(../images/Red-Stripe-Lager-Cenital4-345x655.png) right
+    background: url(../images/circleBeerBG.png) right
       bottom/contain no-repeat;
     grid-row: 2/-1;
   }
   .homeHeader {
     position: unset;
-    grid-template-columns: minmax(220px, 20%) 1fr;
+    grid-template-columns: minmax(220px, 20%) 1fr 100px;
   }
 
   .heroContent {
     position: unset;
     grid-row: 3;
-    grid-column: 1/3;
+    grid-column: 1/-2;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -802,7 +791,7 @@ header {
     flex-direction: column;
     height: auto;
   }
-  .subNav div {
+  .subNav a {
     width: 100%;
   }
 
@@ -815,6 +804,14 @@ header {
   }
 
   /* * =======BEER PAGE========== */
+
+  .promoVideo{
+    height: unset;
+    width: 100vw;
+  }
+   .promoVideo video{
+     width: 100%;
+   }
 
   .infoGraphicCon {
     height: 100vh;
@@ -845,17 +842,17 @@ header {
     border-top: 10px solid #696969;
     border-radius: 25vw 0 0 0;
   }
-  .pum1 {
+  #pum1 {
     grid-area: 2/3/-2/4;
   }
-  .pum2{
+  #pum2{
     grid-area: 3/4/-2/4;
     border-left: 0px;
     border-right: 10px solid #696969;
     border-radius: 0 50% 0 0;
   }
   
-  .pum3{
+  #pum3{
     grid-area: 4/3/-2/4;
   }
   
@@ -889,7 +886,7 @@ header {
 /*  * ===============   MOM PAGE    ============= */
   .momContent {
     height: 360vh;
-    min-height:2200px;
+    min-height:2500px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 6fr 6fr 1fr 1fr;
@@ -898,20 +895,20 @@ header {
   .graphic img{
   max-width:80% ;
   max-height: 80%; 
-}
-.graphic5 img{
-  max-height: 100%;
-  width:400px;
-}
-.graphic h3{
-    margin: 15px auto;
-  font-size: 30px;
-}
-.graphic p{
-  font-size: 20px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #696969;
-}
+  }
+  .graphic5 img{
+    max-height: 100%;
+    width:400px;
+  }
+  .graphic h3{
+      margin: 15px auto;
+    font-size: 30px;
+  }
+  .graphic p{
+    font-size: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #696969;
+  }
   .graphic {
     grid-column: 3/5;
   }
@@ -937,57 +934,60 @@ header {
     grid-column:1/-1;
   }
   
-.lines .target{
-  left :25%;
+  .lines {
+    margin: -5px;
+    border-top: solid 10px #696969;
+    border-bottom: solid 10px #696969;
+    position: relative;
   }
-  
-.lines {
-  margin: -5px;
-  border-top: solid 10px #696969;
-  position: relative;
-  grid-column: 2/-2;
-}
-.line1{
-  border-right: solid 10px #696969;
-  grid-column: 4/-2;
-  grid-row: 2 / span 3;
-}
-  .line1 .target {
-    left: -15px;
+  .line1{
+    border-right: solid 10px #696969;
+    border-radius: 0 30vw 30vw 0;
+    grid-column: 4/-2;
+    grid-row: 2 / span 3;
   }
-.line2{
-  border-left: solid 10px #696969;
-  grid-row: 5 / span 3;
-}
-.line2 .target{
-  left: unset;
-  right :25%;
-}
-.line3{
-  border-right: solid 10px #696969;
-  grid-row: 8 / span 3;
-}
-.line4{
-  border-left: solid 10px #696969;
-  grid-row: 11 / span 3;
-}
-.line4 .target{
-  left: unset;
-  right:25%;
-}
-
-.lineC{
-  grid-row: 14;
-  grid-column: 2/4; 
-  margin-right: -5px;
-  border-right: solid 10px #696969;
-}
-.lineC .target{
-  left: unset;
-  top: unset;
-  right: -30px;
-  bottom: -30px;
-}
+    .line1 .target {
+      left: -15px;
+    }
+  .line2{
+    border-left: solid 10px #696969;
+    border-radius: 30vw 0 0 30vw;
+    grid-column: 4/2;
+    grid-row: 5 / span 3;
+  }
+  .line2 .target{
+    left: unset;
+    right:-15px;
+  }
+  .line3{
+    border-right: solid 10px #696969;
+    border-radius: 0 30vw 30vw 0;
+    grid-column: 4/-2;
+    grid-row: 8 / span 3;
+  }
+  .line4{
+    border-left: solid 10px #696969;
+    border-radius: 30vw 0 0 30vw;
+    grid-column: 4/2;
+    grid-row: 11 / span 3;
+  }
+  .line4 .target{
+    left: unset;
+    right:-15px;
+  }
+  .lineC{
+    grid-row: 14;
+    grid-column: 2/4; 
+    margin-right: -5px;
+    border: none;
+    border-right: solid#696969 10px ;
+  }
+  .lineC .target{
+    left: unset;
+    top: unset;
+    right: -30px;
+    bottom: -30px;
+  }
 }
 
 /* !============= MOBILE SIZE =============*/
@@ -1014,6 +1014,11 @@ header {
   }
 
   /* * =======BEER PAGE========== */
+  .pageTitle{
+    text-align: center;
+    line-height: 120px;
+    font-size: 150px;
+  }
   .subHero {
     display: none;
   }
