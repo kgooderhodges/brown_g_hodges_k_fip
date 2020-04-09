@@ -1,13 +1,18 @@
 (() => {
 
-let targets = document.querySelectorAll('.target'),
-homeArrows = document.querySelectorAll('.slider .arrow'),
-dots = document.querySelectorAll(".slider .dot"),
-sliderImg = document.querySelector('.sliderImg'),
-smPick = document.querySelectorAll('.smPick'),
-popUps = document.querySelectorAll('.popUp'),
-beerArrows = document.querySelectorAll('.beerContent .arrow'),
-largeBeer = document.querySelector('.mainContent');
+let homeArrows = document.querySelectorAll('.slider .arrow'),
+    dots = document.querySelectorAll(".slider .dot"),
+    sliderImg = document.querySelector('.sliderImg'),
+    
+    targets = document.querySelectorAll('.target'),
+    smPick = document.querySelectorAll('.smPick'),
+    popUps = document.querySelectorAll('.popUp'),
+    beerArrows = document.querySelectorAll('.beerContent .arrow'),
+    largeBeer = document.querySelector('.mainContent'),
+    
+    mobilePopUps = document.querySelectorAll('.pum'),
+    mobilePopUpTitle = document.querySelector(".popUpMobileDesc h3"),
+    mobilePopUpText = document.querySelector(".popUpMobileDesc p");
 
 
 const beerText = [
@@ -54,6 +59,7 @@ const beerText = [
         ],
     ]
 ];
+var beerType = beerText[0];
 
 
 //* WHEN YOU CLICK ON THE ARROW
@@ -86,8 +92,7 @@ function slider() {
     sliderImg.style.left = `-${movement}vw`;
 }
 
-function showBeer() {
-    
+function showBeer() {  
     let newBeer = this.classList[1]; 
     largeBeer.classList.remove("lagerBG","lightBG","zeroBG");
     largeBeer.classList.add(newBeer);
@@ -106,39 +111,43 @@ function showBeer() {
 }
 
 
-
-
-
-beerArrows.forEach(arrow => arrow.addEventListener("click", nextBeer));
-    function nextBeer(){     
+beerArrows.forEach(arrow => arrow.addEventListener("click", 
+    function(){     
         if (this.classList[1] === 'arrowR') {
             if (largeBeer.classList[1] === "lagerBG") {
                 largeBeer.classList.replace('lagerBG','lightBG');
+                beerType = beerText[1]
             }
             else if (largeBeer.classList[1] === "lightBG") {
                 largeBeer.classList.replace('lightBG','zeroBG');
+                beerType = beerText[2]
             }
             else if (largeBeer.classList[1] === "zeroBG") {
                 largeBeer.classList.replace('zeroBG','lagerBG');
-                
+                beerType = beerText[0] 
             }    
         }
-        if (this.classList[1] === 'arrowL') {
+        else if (this.classList[1] === 'arrowL') {
             if (largeBeer.classList[1] === "lagerBG") {
                 largeBeer.classList.replace('lagerBG', 'zeroBG');
+                beerType = beerText[2]
             }
             else if (largeBeer.classList[1] === "lightBG") {
                 largeBeer.classList.replace('lightBG', 'lagerBG');
+                beerType = beerText[0]
             }
             else if (largeBeer.classList[1] === "zeroBG") {
                 largeBeer.classList.replace('zeroBG', 'lightBG');
+                beerType = beerText[1]
             }
         }
+        mobilePopUpTitle.textContent = beerType[0][0]
+        mobilePopUpText.textContent = beerType[0][1]
+        
+        mobilePopUps.forEach(pum => pum.classList.add('hide'));
+        mobilePopUps[0].classList.remove('hide');
     }
-
-
-
-    
+));
 
 
 function togglePopUp() {
@@ -150,12 +159,15 @@ function togglePopUp() {
         popUp.classList.remove('hide');
         console.log("Pop Up Shown");
     }
+    mobilePopUps.forEach(pum => pum.classList.add('hide'));
+    mobilePopUps[this.dataset.index].classList.remove('hide');
+   console.log(beerType);
+    
+    mobilePopUpTitle.textContent = beerType[this.dataset.index][0]
+        mobilePopUpText.textContent = beerType[this.dataset.index][1]
 }
 
 homeArrows.forEach(arrow => arrow.addEventListener("click", nextSlide));
-
-/* beerArrows[0].addEventListener("click", previousBeer);
-beerArrows[1].addEventListener("click", nextBeer); */
 dots.forEach(dot => dot.addEventListener("click", dotColor));
 targets.forEach(target => target.addEventListener('click', togglePopUp));
 smPick.forEach(pick => pick.addEventListener("click", showBeer));
