@@ -3,12 +3,14 @@
 let homeArrows = document.querySelectorAll('.slider .arrow'),
     dots = document.querySelectorAll(".slider .dot"),
     sliderImg = document.querySelector('.sliderImg'),
+    hamburger = document.querySelector('.dropMenu'),
     
     targets = document.querySelectorAll('.target'),
     smPick = document.querySelectorAll('.smPick'),
     popUps = document.querySelectorAll('.popUp'),
     beerArrows = document.querySelectorAll('.beerContent .arrow'),
     largeBeer = document.querySelector('.mainContent'),
+    playOption = document.querySelector('.promoVideo img'),
     
     mobilePopUps = document.querySelectorAll('.pum'),
     mobilePopUpTitle = document.querySelector(".popUpMobileDesc h3"),
@@ -62,6 +64,13 @@ const beerText = [
 var beerType = beerText[0];
 
 
+function menuToggle() {
+    console.log('ham');
+    let menu = document.querySelector('.mainNav');
+    menu.classList.toggle("slideToggle");
+
+}
+
 //* WHEN YOU CLICK ON THE ARROW
 function nextSlide() {
     let currentDot = parseInt(document.querySelector(".dotOn").dataset.offset);
@@ -90,6 +99,17 @@ function dotColor() {
 function slider() {
     let movement = document.querySelector('.dotOn').dataset.offset * 94;
     sliderImg.style.left = `-${movement}vw`;
+}
+
+
+function playVideo() {
+    let video = document.querySelector('.promoVideo video');
+    video.play()
+    playOption.classList.add('hide');
+
+    video.addEventListener('ended', function() {
+        playOption.classList.remove('hide');    
+    });
 }
 
 function showBeer() {  
@@ -149,7 +169,6 @@ beerArrows.forEach(arrow => arrow.addEventListener("click",
     }
 ));
 
-
 function togglePopUp() {
     let popUp = this.querySelector('.popUp');   
     if (popUp.classList.length === 1){
@@ -167,10 +186,12 @@ function togglePopUp() {
         mobilePopUpText.textContent = beerType[this.dataset.index][1]
 }
 
+hamburger.addEventListener('click', menuToggle)
 homeArrows.forEach(arrow => arrow.addEventListener("click", nextSlide));
 dots.forEach(dot => dot.addEventListener("click", dotColor));
 targets.forEach(target => target.addEventListener('click', togglePopUp));
 smPick.forEach(pick => pick.addEventListener("click", showBeer));
 
+playOption.addEventListener('click', playVideo);
 
 })();
