@@ -61,7 +61,7 @@ header {
   overflow: hidden;
   min-height: 675px;
   display: grid;
-  grid-template: minmax(150px, 20%) repeat(3, 1fr) / minmax(220px, 20%) 4fr 1fr 100px;
+  grid-template: minmax(150px, 20%) repeat(3, 1fr) / minmax(220px, 20%) 3fr 1fr 100px;
 }
 
 .logo {
@@ -134,9 +134,9 @@ header {
   transform: scale(1.05);
 }
 .homeHeroContent {
-  grid-area: 3/2/-2/-3;
+  grid-area: 3/2/-2/3;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .homeHeroContent .button {
@@ -161,13 +161,14 @@ header {
 .slider {
   height: 540px;
   display: grid;
-  grid-template: 1fr 30px /3vw 1fr 3vw;
+  grid-template: 30px 1fr 30px /3vw 1fr 3vw;
 }
 
 .sliderImgCon{
   overflow:hidden;
   position: relative;
   grid-column: 2;
+  grid-row: 2;
 }
 
 .sliderImg {
@@ -186,10 +187,14 @@ header {
   height: 100%;
   width: 100%;
 }
+.promo1 {background: url(../images/Promo01.jpg) center/contain no-repeat;}
+.promo2 {background: url(../images/Promo02.jpg) center/contain no-repeat;}
+.promo3 {background: url(../images/Promo01.jpg) center/contain no-repeat;}
+
 .sliderImg img{
   height: 100%;
-display: block;
-margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .arrow {
@@ -205,10 +210,10 @@ margin: 0 auto;
 }
 
 .slider .arrowL {
-  grid-row: 1/3;
+  grid-row: 1/-1;
 }
 .slider .arrowR {
-  grid-area: 1/3/3/3;
+  grid-area: 1/3/-1/-1;
   transform: rotate(180deg);
 }
 
@@ -219,6 +224,7 @@ margin: 0 auto;
   justify-content: space-between;
   align-self: center;
   justify-self: center;
+  grid-row: 3;
 }
 
 .dot {
@@ -261,7 +267,7 @@ margin: 0 auto;
 }
 
 .subNav img {
-  margin: 10px auto;
+  margin: 20px auto;
   height: 200px;
 }
 
@@ -371,11 +377,13 @@ margin: 0 auto;
 /* *========= header end =========== */
 
 .promoVideo{
+  position: relative;
   height: 75vh;
   padding: 5px;
   background: #A82017;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#991d13+0,a82017+50,a82017+50,991d13+100 */
   background: #991d13; /* Old browsers */
@@ -383,8 +391,20 @@ margin: 0 auto;
   background: -webkit-linear-gradient(top,  #991d13 0%,#a82017 50%,#a82017 50%,#991d13 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  #991d13 0%,#a82017 50%,#a82017 50%,#991d13 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#991d13', endColorstr='#991d13',GradientType=0 ); /* IE6-9 */
-
 }
+  .promoVideo img {
+    position: absolute;
+    opacity: .5;
+    height: 50%;
+    cursor: pointer;
+  }
+  .promoVideo img:hover {
+    transform: scale(1.05);
+  }
+
+  .promoVideo video {
+    height: 100%;
+  }
 
 .beerContent {
   padding: 1vh 0;
@@ -500,24 +520,27 @@ margin: 0 auto;
   height: 540px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 .whereToBuy h2 {
+  margin: 40px;
   font-size: 72px;
-  margin-bottom: 40px;
 }
 .whereCon {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-evenly;
 }
-.whereCon > div {
+.whereCon div {
   width: 35%;
+  height: 35%;
   min-width: 300px;
-  margin: 40px;
+  background:center/contain no-repeat;
 }
+.whereCon div:nth-of-type(1){background-image: url(../images/whereToBuy/LCBO.png);}
+.whereCon div:nth-of-type(3){background-image: url(../images/whereToBuy/beerstore.png);}
+.whereCon div:nth-of-type(4){background-image: url(../images/whereToBuy/walmart.jpg);}
+.whereCon div:nth-of-type(2){background-image: url(../images/whereToBuy/superstore.png);}
 
 /* ! =======  MOM PAGE   ========== */
 
@@ -619,37 +642,43 @@ margin: 0 auto;
 
 .aboutUs {
   display: flex;
-  flex-direction: row;
-  height: 50vh;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 .aboutUs div {
-  width: 50%;
+  width: 500px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.aboutUs p {
+.aboutText{
+  flex-grow: 2;
+  max-width: 1025px;
+}
+.aboutText p {
+  display: inline-block;
   color: #222;
   padding-bottom: 40px;
+  margin: 1em;
   border-bottom: solid 1px #222;
   width: 80%;
 }
-
 .aboutImg {
-  background: url(../images/Red-Stripe-Lager-Cenital4-345x655.png) center/auto 80% no-repeat;
-  background-color: #da291c;
-  height: 100%;
+  background:  url(../images/concreteTex.jpg) center/contain no-repeat #da291c;
+  flex-grow: 1;
+  max-width: 1025px;
 }
 
 .missionContent {
-  height:150vh;
-  max-height: 1300px;
   display: grid;
   grid-template-rows:2fr 1fr 1fr 2fr;
 }
+
 .missionContent h3{
   font-size: 48px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .missionContent p {
   text-align: center;
@@ -687,17 +716,19 @@ margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
 
 .card {
+  flex-shrink: 1;
+  flex-basis:fit-content;
   background-color: transparent;
   height: 100%;
   width: 250px;
   border-radius: 5px;
   perspective: 1000px;
-
 }
 .card img{
   height:40%;
@@ -741,6 +772,40 @@ margin: 0 auto;
   transform: rotateY(180deg);
 }
 
+@media screen and (max-width: 800px) {
+  .missionContent {
+    grid-template-rows:2fr auto auto 2fr;
+    max-height: unset;
+  }
+  .missionContent p {
+    width: 95%;
+  }
+
+  .cardCon {
+    flex-direction: ;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .card{
+    height: 200px;
+    margin: 5px; 
+    width: 90%;
+    flex-direction:row;
+  }
+  .cardFront{
+  flex-direction: row;
+  justify-content: space-evenly;
+  }
+  .cardFront img {
+    height: 80%
+  }
+  .cardBack h3 {
+    font-size: 36px;
+  }
+}
 
 /* ! =======  CONTACT PAGE   ========== */
 .contactCon {
@@ -758,7 +823,6 @@ margin: 0 auto;
 	font-size: 42px;
 	line-height: 60px;
 	padding: 5px;
-
 }
 
 .address p {
@@ -797,7 +861,6 @@ margin: 0 auto;
 	box-shadow: 0px 0px 8px rgba(0,0,0,.7)
 }
 
-
 .form form {
 	margin: 40px 0;
 	display: flex;
@@ -820,7 +883,6 @@ margin: 0 auto;
 	font-size: 30px;
 	border-radius: 8px;
 }
-
 
 .formLeft {
 	width: 563px;
@@ -894,17 +956,47 @@ margin: 0 auto;
     align-self: center;
     justify-self: center;
   }
-
+  
+  .active {background: none;}
   .mainNav {
-    display: none;
+    position: absolute;
+    right: -330px;
+    background-color: rgba(218, 41, 28, .9);
+    padding-top: 3em;
+    padding-bottom: 1em ;
+    display: flex;
+    flex-direction: column;
+    transition: right 800ms ease-in-out;
   }
+
+  .mainNav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .mainNav ul li {
+    margin: 0 .5em;
+    padding: .5em;
+    padding-left: 3em;
+    text-align: right;
+    border-bottom: 1px #696969 solid;
+    z-index: 2;
+  }
+  .mainNav ul li:hover {
+    transform: scale(1);
+    background-color: rgba(255, 255, 255, .2);
+  }
+
+.slideToggle {
+    right: 0px;
+  }
+
 
   .dropMenu {
     display: flex;
-    cursor: pointer;
-    grid-column: 3;
     grid-row: 1;
-    background: url(../images/hamburger.svg) right 30px center / 50px no-repeat;
+    grid-column: -2;
+    background: url(../images/icons/hamburger.svg) right 30px top 30px / 50px no-repeat;
+    z-index: 2;
   }
   .dropMenu:hover {
     background-size: 52px;
@@ -1156,6 +1248,15 @@ margin: 0 auto;
   .popUpMobileDesc {
     grid-column: 1/-1;
   }
+  .whereCon div {
+  height: 20%;
+  margin: 10px;
+  }
+  .whereToBuy h2{
+   font-size: 36px;
+  }
+
+
 }
 
 /*! ++++++++ helper classes at bottom to make them override other classes ++++++++ */
