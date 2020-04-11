@@ -416,15 +416,15 @@ header {
 
 .lagerBG {background: red center/contain no-repeat;
   /*   background: url(../images/lager.jpg) center/contain no-repeat; */
-  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
+  background-image: url(../images/Tucks_Reg.png);    
 }
 .lightBG {background: green center/contain no-repeat;
   /*   background: url(../images/lager.jpg) center/contain no-repeat; */
-  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
+  background-image: url(../images/Tucks_Light.png);    
 }
 .zeroBG {background: blue center/contain no-repeat;
   /*   background: url(../images/lager.jpg) center/contain no-repeat; */
-  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
+  background-image: url(../images/Tucks_Zero.png);    
 }
 
 .infoGraphicCon {
