@@ -145,7 +145,7 @@ header {
   margin: 10px 0;
 }
 .dropMenu {
-  display: none;
+  display: contents;
 }
 
 .active {
@@ -878,19 +878,15 @@ form {
   width:0;
   height:0;
 
-  border-right: 20px solid transparent;
-  border-top: 20px solid #696969;
-  border-left: 20px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #696969;
+  border-left: 15px solid transparent;
   transform:rotate(-135deg);
-  transition:all ease-in-out 500ms;
+  transition:all ease-in-out 250ms;
 }
 .inqueryType:hover .spinner{
   transform: rotate(0deg);  
   right: 5px;
-}
-.inqueryType:hover .drop{
-  display: inherit;
-  cursor: pointer;
 }
 
 .drop{
@@ -913,7 +909,12 @@ form {
   background-color: rgba(255, 0, 0, 0.5);
 }
 
-form input {
+.inqueryType:hover .drop{
+  display: inherit;
+  cursor: pointer;
+}
+
+.contactform input {
   flex-basis: 300px;
   flex-grow: 1;
   flex-shrink: 3;
@@ -981,7 +982,7 @@ form input {
     align-self: center;
     justify-self: center;
   }
-  
+
   .active {background: none;}
   .mainNav {
     position: absolute;
@@ -1015,16 +1016,21 @@ form input {
     right: 0px;
   }
 
-
   .dropMenu {
-    display: flex;
-    grid-row: 1;
-    grid-column: -2;
-    background: url(../images/icons/hamburger.svg) right 30px top 30px / 50px no-repeat;
-    z-index: 2;
+    background: url(../images/icons/hamburger.svg) center/contain no-repeat;
+    display: block;
+    
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    cursor: pointer;
   }
-  .dropMenu:hover {
-    background-size: 52px;
+   .dropMenu:hover {
+    transform-origin: center;
+    transform: scale(1.05);
   }
 
   .slogan {
