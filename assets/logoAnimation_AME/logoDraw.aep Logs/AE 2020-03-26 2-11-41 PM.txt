@@ -1,8 +1,0 @@
-  2020-03-26 2:11:41 PM: Starting composition “logoDraw”.
-
-  Output To: C:\Users\gavin\Desktop\brown_g_hodges_k_fip\assets\logoDraw.mov    2020-03-26 2:11:44 PM: Finished composition “logoDraw”.
-
-
-  Total Time Elapsed: 3 Seconds
-Log closed on 2020-03-26 at 2:11:44 PM
-
