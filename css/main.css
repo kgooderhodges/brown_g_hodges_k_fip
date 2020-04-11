@@ -32,11 +32,9 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   -ms-overflow-style: none;
-  scroll-behavior: smooth;
   max-width: 2440px;
 }
 body::-webkit-scrollbar {
-  display: none;
 }
 
 p {
@@ -289,7 +287,7 @@ header {
 
 .mainFooter {
   background-color: #696969;
-  /*   height: 360px; */
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -384,7 +382,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#991d13+0,a82017+50,a82017+50,991d13+100 */
   background: #991d13; /* Old browsers */
   background: -moz-linear-gradient(top,  #991d13 0%, #a82017 50%, #a82017 50%, #991d13 100%); /* FF3.6-15 */
@@ -407,6 +405,7 @@ header {
   }
 
 .beerContent {
+  background: url(../images/heroBG.jpg) right/cover no-repeat #da291c;
   padding: 1vh 0;
   height: 98vh;
   min-height: 675px;
@@ -414,17 +413,15 @@ header {
   max-width: 2000px;
 }
 
-.lagerBG {background: red center/contain no-repeat;
-  /*   background: url(../images/lager.jpg) center/contain no-repeat; */
-  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
+.lagerBG {
+   background: url(../images/lager.png) center/contain no-repeat;
 }
-.lightBG {background: green center/contain no-repeat;
-  /*   background: url(../images/lager.jpg) center/contain no-repeat; */
-  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
+.lightBG {
+  background: url(../images/light.png) center/contain no-repeat; 
+    
 }
-.zeroBG {background: blue center/contain no-repeat;
-  /*   background: url(../images/lager.jpg) center/contain no-repeat; */
-  background-image: url(../images/Red-Stripe-Lager-Cenital4-345x655.png);    
+.zeroBG {
+  background: url(../images/zero.png) center/contain no-repeat;   
 }
 
 .infoGraphicCon {
@@ -436,10 +433,8 @@ header {
   grid-gap: 0.5em;
 }
 
-.smPick img {
-  margin: 0 auto;
-  display: block;
-  height: 100%;
+.smPick{
+  background-color: #fff;
 }
 
 .smPick:hover {
@@ -517,13 +512,13 @@ header {
 .whereToBuy {
   background-color: #da291c;
   text-align: center;
-  height: 540px;
   display: flex;
   flex-direction: column;
+  padding: 1em;
 }
 .whereToBuy h2 {
-  margin: 40px;
-  font-size: 72px;
+  margin-bottom: 10px;
+  font-size: 48px;
 }
 .whereCon {
   height: 100%;
@@ -532,11 +527,13 @@ header {
   justify-content: space-evenly;
 }
 .whereCon div {
-  width: 35%;
-  height: 35%;
-  min-width: 300px;
+  flex-grow: 1;
+  width: 300px;
+  height: 100px;
   background:center/contain no-repeat;
-}
+  margin-bottom: 10px;
+  }
+
 .whereCon div:nth-of-type(1){background-image: url(../images/whereToBuy/LCBO.png);}
 .whereCon div:nth-of-type(3){background-image: url(../images/whereToBuy/beerstore.png);}
 .whereCon div:nth-of-type(4){background-image: url(../images/whereToBuy/walmart.jpg);}
@@ -647,27 +644,22 @@ header {
 }
 .aboutUs div {
   width: 500px;
-  height: 400px;
+  min-height: 40vh;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.aboutText{
-  flex-grow: 2;
-  max-width: 1025px;
-}
+
 .aboutText p {
-  display: inline-block;
   color: #222;
-  padding-bottom: 40px;
-  margin: 1em;
+  padding-bottom: 20px;
+  margin: 1em auto;
   border-bottom: solid 1px #222;
   width: 80%;
 }
 .aboutImg {
   background:  url(../images/concreteTex.jpg) center/contain no-repeat #da291c;
-  flex-grow: 1;
-  max-width: 1025px;
 }
 
 .missionContent {
@@ -722,8 +714,6 @@ header {
 }
 
 .card {
-  flex-shrink: 1;
-  flex-basis:fit-content;
   background-color: transparent;
   height: 100%;
   width: 250px;
@@ -737,7 +727,6 @@ header {
     color: #da291c;
 }
 
-/* This container is needed to position the front and back side */
 .cardInner {
   position: relative;
   width: 100%;
@@ -747,7 +736,6 @@ header {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .card:hover .cardInner {
   transform: rotateY(180deg);
 }
@@ -782,7 +770,6 @@ header {
   }
 
   .cardCon {
-    flex-direction: ;
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
@@ -808,17 +795,20 @@ header {
 }
 
 /* ! =======  CONTACT PAGE   ========== */
-.contactCon {
+.addressCon {
 	margin-top: 80px; 
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+  justify-content: center;
+  height: 500px;
+  padding:0 5%;
 }
-
+.addressCon div{
+  flex-grow: 1;
+}
 .address {
   color: #000;
-	width: 25%;
-	height: 500px;
+	width: 350px;
 	background-color: #f8f8f8;
 	font-size: 42px;
 	line-height: 60px;
@@ -831,99 +821,128 @@ header {
 }
 
 #map {
-  width: 50%;
-  height: 510px;
-	background-image: url(../images/map.jpg);
-	background-size: cover;
-	background-position: center;
+  width: 700px;
+	background: url(../images/map.jpg) center/cover no-repeat;
 }
 
-.inquiryCon {
-	display: flex;
+
+form {
+  margin: 40px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: center;
-}
-
-.inquiryCon a {
-	width: 368px;
-  height: 80px;
-  
-	border-radius: 10px;
-	margin: 40px 40px 0 40px;
-	text-align: center;
-	line-height: 80px;	
-
-	background-color: #da291c;
-	font-size: 36px;
-}
-
-.inquiryCon a:hover {
-	box-shadow: 0px 0px 8px rgba(0,0,0,.7)
-}
-
-.form form {
-	margin: 40px 0;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-.form input {
-	background-color: #f8f8f8;
-	padding: 10px;
-	line-height: 40px;
-	font-size: 30px;
-	border-radius: 8px;
-}
-
-.form textarea {
-	background-color: #f8f8f8;
-	padding: 10px;
-	line-height: 40px;
-	font-size: 30px;
-	border-radius: 8px;
+  justify-content: center;
+  padding:0 5%;
 }
 
 .formLeft {
-	width: 563px;
-	height: 250px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: space-between;
-	flex-wrap: wrap;
+  flex-grow:1;
+  width: 563px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.formLeft > * {
+  margin: 10px;
+}
+
+.inqueryType {
+  width:300px;
+  height: 40px;
+  position: relative;
+  background-color: #fff;
+  border: #bbb solid 2px;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.inqueryType p {
+  color: #696969;
+  font-size: 30px;
+  line-height: 40px;
+  border-bottom: 2px solid #bbb;
+}
+
+.spinner {
+  position:absolute;
+  right:0px;
+  top: 10px;
+  width:0;
+  height:0;
+
+  border-right: 20px solid transparent;
+  border-top: 20px solid #696969;
+  border-left: 20px solid transparent;
+  transform:rotate(-135deg);
+  transition:all ease-in-out 500ms;
+}
+.inqueryType:hover .spinner{
+  transform: rotate(0deg);  
+  right: 5px;
+}
+.inqueryType:hover .drop{
+  display: inherit;
+  cursor: pointer;
+}
+
+.drop{
+  background-color: #fff;
+  border: #bbb 2px solid;
+  position: absolute;
+  top:50px;
+  left: 5px;
+  width: 100%;
+}
+.drop li{
+  color: #222;
+  padding: 10px ;
+  border-bottom: 2px solid #bbb;
+}
+.drop li:last-of-type{
+  border: none;
+}
+.drop li:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+form input {
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-shrink: 3;
+	background-color: #f8f8f8;
+	padding: 10px;
+	line-height: 40px;
+	font-size: 30px;
+	border-radius: 8px;
 }
 
 .name{
-	width: 250px;
+  flex-basis: 400px;
+  flex-shrink: 2;
+  flex-grow: 10000;
 }
-.info {
-	width: 563px;
-}
-
 
 .formRight {
-	width: 563px;
-	height: 250px;
-}
-
-.submitCon{
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+  flex-grow: 3;
+  width: 563px;
+  margin: 10px;
 }
 
 .submit {
-	width: 368px;
+  float: right;
+  margin-right: 5%;
+  margin-bottom:40px ;
+	width: 200px;
 	height: 80px;
-	border-radius: 10px;
-	margin-bottom: 40px;
-
+  
+  border-radius: 10px; 
 	background-color: #da291c;
 
 	text-align: center;
 	line-height: 80px;
-	font-family: "ebrima", "Candarab", sans-serif;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-size: 36px;
 	font-weight: bold;
 	color: #fff;;
@@ -986,7 +1005,7 @@ header {
     background-color: rgba(255, 255, 255, .2);
   }
 
-.slideToggle {
+  .slideToggle {
     right: 0px;
   }
 
@@ -1098,10 +1117,6 @@ header {
     font-size: 36px;
   }
 
-  .whereToBuy h2,
-  .whereCon div {
-    margin: 3vw;
-  }
 
 /*  * ===============   MOM PAGE    ============= */
   .momContent {
@@ -1208,6 +1223,14 @@ header {
     right: -30px;
     bottom: -30px;
   }
+/*   *================= Contact Page =============== */
+  .address {
+    display: none;
+  }
+  .formRight {
+    height: 400px;
+  }
+
 }
 
 /* !============= MOBILE SIZE =============*/
@@ -1232,6 +1255,9 @@ header {
     grid-column: 1/7;
     grid-row: 2/6;
   }
+  .mainFooter {
+    text-align: center;
+  }
 
   /* * =======BEER PAGE========== */
   .pageTitle{
@@ -1248,13 +1274,7 @@ header {
   .popUpMobileDesc {
     grid-column: 1/-1;
   }
-  .whereCon div {
-  height: 20%;
-  margin: 10px;
-  }
-  .whereToBuy h2{
-   font-size: 36px;
-  }
+
 
 
 }
