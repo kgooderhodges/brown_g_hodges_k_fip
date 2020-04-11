@@ -50,6 +50,10 @@ header {
   overflow-x: hidden;
 }
 
+.hidden {
+  display: none
+}
+
 /* *+++++ Landing Page +++++ */
 
 .homeHeader {
@@ -187,7 +191,7 @@ header {
 }
 .promo1 {background: url(../images/Promo01.jpg) center/contain no-repeat;}
 .promo2 {background: url(../images/Promo02.jpg) center/contain no-repeat;}
-.promo3 {background: url(../images/Promo01.jpg) center/contain no-repeat;}
+.promo3 {background: url(../images/Promo03.jpg) center/contain no-repeat;}
 
 .sliderImg img{
   height: 100%;
@@ -422,6 +426,8 @@ header {
 }
 .zeroBG {
   background: url(../images/zero.png) center/contain no-repeat;   
+
+
 }
 
 .infoGraphicCon {
