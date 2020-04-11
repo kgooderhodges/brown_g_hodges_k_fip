@@ -1,20 +1,19 @@
 (() => {
 
-let homeArrows = document.querySelectorAll('.slider .arrow'),
-    dots = document.querySelectorAll(".slider .dot"),
-    sliderImg = document.querySelector('.sliderImg'),
-    hamburger = document.querySelector('.dropMenu'),
-    
-    targets = document.querySelectorAll('.target'),
-    smPick = document.querySelectorAll('.smPick'),
-    popUps = document.querySelectorAll('.popUp'),
-    beerArrows = document.querySelectorAll('.beerContent .arrow'),
-    largeBeer = document.querySelector('.mainContent'),
-    playOption = document.querySelector('.promoVideo img'),
-    
-    mobilePopUps = document.querySelectorAll('.pum'),
-    mobilePopUpTitle = document.querySelector(".popUpMobileDesc h3"),
-    mobilePopUpText = document.querySelector(".popUpMobileDesc p");
+let homeArrows = document.querySelectorAll(".slider .arrow"),
+	dots = document.querySelectorAll(".slider .dot"),
+	sliderImg = document.querySelector(".sliderImg"),
+	hamburger = document.querySelector(".dropMenu"),
+	targets = document.querySelectorAll(".target"),
+	smPick = document.querySelectorAll(".smPick"),
+	popUps = document.querySelectorAll(".popUp"),
+	beerArrows = document.querySelectorAll(".beerContent .arrow"),
+	largeBeer = document.querySelector(".mainContent"),
+	playOption = document.querySelector(".promoVideo img"),
+	mobilePopUps = document.querySelectorAll(".pum"),
+	mobilePopUpTitle = document.querySelector(".popUpMobileDesc h3"),
+	mobilePopUpText = document.querySelector(".popUpMobileDesc p"),
+	inqueryType = document.querySelectorAll(".inqueryType ul li");
 
 
 const beerText = [
@@ -186,11 +185,19 @@ function togglePopUp() {
         mobilePopUpText.textContent = beerType[this.dataset.index][1]
 }
 
-hamburger.addEventListener('click', menuToggle)
+function toggleInquery() {
+    let inqueryChoice = document.querySelector('.inqueryType p');
+    inqueryChoice.textContent = this.textContent;
+}
+
+
+hamburger.addEventListener('click', menuToggle);
+
 homeArrows.forEach(arrow => arrow.addEventListener("click", nextSlide));
 dots.forEach(dot => dot.addEventListener("click", dotColor));
 targets.forEach(target => target.addEventListener('click', togglePopUp));
 smPick.forEach(pick => pick.addEventListener("click", showBeer));
+inqueryType.forEach(type => type.addEventListener("click", toggleInquery));
 
 playOption.addEventListener('click', playVideo);
 
