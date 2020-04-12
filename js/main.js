@@ -18,7 +18,7 @@ let homeArrows = document.querySelectorAll(".slider .arrow"),
 	inqueryType = document.querySelectorAll(".inqueryType ul li");
 
 
-//! Beer Page Pop Up array ---------------------
+//! Beer Page Pop Up array
 const beerText = [
     [
         [
