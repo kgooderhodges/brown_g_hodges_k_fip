@@ -23,47 +23,46 @@ const beerText = [
     [
         [
             "Who The Tuck?",
-            `A refreshing witch hazel lager that will cool you down from the inside out`,
+            "A refreshing witch hazel lager that will cool you down from the inside out"
         ],
      [
             "Why Stubby?",
-            `Better question is, why NOT a stubby. It gives a vintage vibe and it got you thinking about us`,
+            "Better question is, why NOT a stubby. It gives a vintage vibe and it got you thinking about us"
         ],
         [
             "How Cool is it?",
-            `Have an uncomfortable hot feeling medically or self-induced, Tucks is going to cool you down`,
+            "Have an uncomfortable hot feeling medically or self-induced, Tucks is going to cool you down"
         ]
     ],
     [
         [
             "Light Beer?",
-            `A light bodied twist on our original lager, giving you a bright crisp flavour`,
+            "A light bodied twist on our original lager, giving you a bright crisp flavour"
         ],
         [
             "What is it Good For?",
-            `Giving you a cooling sensation when you have that burning feeling from too much hot sauce or the beauty of motherhood. Also great for the average Joe looking for low carb. Good on you Joe`,
+            "Giving you a cooling sensation when you have that burning feeling from too much hot sauce or the beauty of motherhood. Also great for the average Joe looking for low carb. Good on you Joe"
         ],
         [
             "Cool and Crisp?",
-            ` Doesn’t sacrifice flavour and what combination is better than this? None!`,
+            "Doesn’t sacrifice flavour and what combination is better than this? None!"
         ]
     ],
     [
         [
             "Wait No Alcohol?",
-            `Our refreshing lager giving you that crisp flavour you love without the alcohol, that sounds great! You don’t need to be at 11 all the time, often times Zero is awesome`,
+            "Our refreshing lager giving you that crisp flavour you love without the alcohol, that sounds great! You don’t need to be at 11 all the time, often times Zero is awesome"
         ],
         [
             "Who would want this?",
-            `Lots of reasons, and no judgment. No one dislikes the person that enjoys a cool refreshing drink and being responsible`,
+            "Lots of reasons, and no judgment. No one dislikes the person that enjoys a cool refreshing drink and being responsible"
         ],
         [
             "A Helping Hand.",
-            `At Tuck we are there for you from tip to tail; wanting you to feel great and be refreshed`,
+            "At Tuck we are there for you from tip to tail; wanting you to feel great and be refreshed"
         ],
     ]
 ];
-var beerType = beerText[0]; //* on loading, displays the first text
 
 
 //? Functions=============================================================================
@@ -129,7 +128,7 @@ function showBeer() {
     //* use dataset to match up text to pop up
     //* change the h3 and p to the correct text
     popUpTitle.forEach(title => title.textContent = beerType[title.parentNode.dataset.place][0]);    
-    popUpText.forEach(text => text.textContent = beerType[title.parentNode.dataset.place][1]);    
+    popUpText.forEach(text => text.textContent = beerType[text.parentNode.dataset.place][1]);    
 }
 
   //*  FOR MOBILE - CHANGES BG IMAGE AND TEXT IN POP UPS        
