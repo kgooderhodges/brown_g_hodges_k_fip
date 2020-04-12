@@ -5,7 +5,7 @@
 let homeArrows = document.querySelectorAll(".slider .arrow"),
 	dots = document.querySelectorAll(".slider .dot"),
 	sliderImg = document.querySelector(".sliderImg"),
-	hamburger = document.querySelector(".dropMenu"),
+    hamburger = document.querySelector(".hamburger"),
 	targets = document.querySelectorAll(".target"),
 	smPick = document.querySelectorAll(".smPick"),
 	popUps = document.querySelectorAll(".popUp"),
@@ -23,39 +23,39 @@ const beerText = [
     [
         [
             "Who The Tuck?",
-            `Tucks is medicating Cooling pads`,
+            `A refreshing witch hazel lager that will cool you down from the inside out`,
         ],
      [
             "Why Stubby?",
-            `Classic Feel is stubby `,
+            `Better question is, why NOT a stubby. It gives a vintage vibe and it got you thinking about us`,
         ],
         [
             "How Cool is it?",
-            `It makes your butt pain go away`,
+            `Have an uncomfortable hot feeling medically or self-induced, Tucks is going to cool you down`,
         ]
     ],
     [
         [
             "Light Beer?",
-            `For those hot days in the Jamaican sun`,
+            `A light bodied twist on our original lager, giving you a bright crisp flavour`,
         ],
         [
             "What is it Good For?",
-            `While breast feeding you can consume high alcohol content`,
+            `Giving you a cooling sensation when you have that burning feeling from too much hot sauce or the beauty of motherhood. Also great for the average Joe looking for low carb. Good on you Joe`,
         ],
         [
             "Cool and Crisp?",
-            ` Doesnt sacrifice flavour`,
+            ` Doesn’t sacrifice flavour and what combination is better than this? None!`,
         ]
     ],
     [
         [
             "Wait No Alcohol?",
-            `Enjoy all the rich flavour and cooling benifits even if you cant consume alcohol`,
+            `Our refreshing lager giving you that crisp flavour you love without the alcohol, that sounds great! You don’t need to be at 11 all the time, often times Zero is awesome`,
         ],
         [
             "Who would want this?",
-            `Specifically Moms can reap all the benifits of butt cooling without harming your pregnancy`,
+            `Lots of reasons, and no judgment. No one dislikes the person that enjoys a cool refreshing drink and being responsible`,
         ],
         [
             "A Helping Hand.",
