@@ -41,7 +41,7 @@ const beerText = [
         ],
         [
             "What is it Good For?",
-            "Giving you a cooling sensation when you have that burning feeling from too much hot sauce or the beauty of motherhood. Also great for the average Joe looking for low carb. Good on you Joe"
+            "Giving you a cooling sensation when you have that burning feeling from too much hot sauce or the beauty of motherhood. Also great for the average Joe looking for low carb"
         ],
         [
             "Cool and Crisp?",
@@ -54,12 +54,12 @@ const beerText = [
             "Our refreshing lager giving you that crisp flavour you love without the alcohol, that sounds great! You don’t need to be at 11 all the time, often times Zero is awesome"
         ],
         [
-            "Who would want this?",
+            "Why No Alcohol?",
             "Lots of reasons, and no judgment. No one dislikes the person that enjoys a cool refreshing drink and being responsible"
         ],
         [
             "A Helping Hand.",
-            "At Tuck we are there for you from tip to tail; wanting you to feel great and be refreshed"
+            "At Tucks we are there for you from tip to tail; wanting you to feel great and be refreshed"
         ],
     ]
 ];
