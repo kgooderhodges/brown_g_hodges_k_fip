@@ -74,13 +74,15 @@ header {
 
 .cooling {
   background: url(../images/cooling.png) top/contain no-repeat;
-  grid-row: 2 /7;
+  grid-row: 2 /-1;
+  grid-column: 1;
 }
 
 .mainHero {
-  grid-area: 1/2/-1/-1;
-  background: url(../images/NEW_circleBeer.png) right bottom/contain no-repeat;
+  grid-area: 1/1/-1/-1;
+  background: url(../images/NEW_circleBeer.png) right bottom -60px/contain no-repeat;
 }
+
 
 .heroContent {
   text-align: center;
@@ -350,25 +352,29 @@ header {
   height: 50vh;
   max-height: 540px;
   min-height: 350px;
-
   display: grid;
   grid-template: minmax(150px, 20%) 1fr / minmax(220px, 20%) 1fr 100px;
-
   overflow: hidden;
 }
 .pageTitle {
   font-family: 'Veneer', 'Franklin Gothic Medium', Arial, sans-serif;
   text-transform: capitalize;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: flex-end;
   font-size: 170px;
   margin: 10px 30px;
   grid-area: 1/1/-1/-1;
-  /* background: url(../images/2020beer.svg) bottom left/600px no-repeat; */
 }
 .pageTitle span {
   font-family: 'VeneerExtras';
   font-size: 200px;
+}
+
+@media screen and (max-width: 800px) {
+  .pageTitle{
+    margin:10px auto;
+  }
 }
 
 .subHero {
@@ -973,15 +979,21 @@ form {
 	box-shadow: 0px 0px 8px rgba(0,0,0,.7)
 }
 
+@media screen and (max-width: 800px) {
 
-/* !========== TABLET SIZE============= */
+  .mainHero {
+    background: url(../images/lager.png) right 100px
+      bottom 10px / auto 85% no-repeat;
+      background-size: ;
+      grid-area: 1/1/-1/-1;
+  }
+}
+
+  /* !========== TABLET SIZE============= */
+
 
 @media screen and (max-width: 1050px) {
-  .mainHero {
-    background: url(../images/NEW_circleBeer.png) right
-      bottom/contain no-repeat;
-    grid-row: 2/-1;
-  }
+
   .homeHeader {
     position: unset;
     grid-template-columns: minmax(220px, 20%) 1fr 100px;
@@ -1067,6 +1079,10 @@ form {
   }
 
   /* * =======BEER PAGE========== */
+
+  .subHero {
+      background: url(../images/NEW_circleBeer.png) right/600px no-repeat;
+  }
 
   .promoVideo{
     height: unset;
@@ -1262,8 +1278,19 @@ form {
 /* !============= MOBILE SIZE =============*/
 
 @media screen and (max-width: 675px) {
+
+  .mainHero {
+    background-position: bottom;
+  }
+
   .homeHeroContent {
-    display: none;
+    position: absolute;
+    top: 35%;
+    right:10%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    width: 50%;
   }
 
   .heroContent input {
@@ -1276,32 +1303,24 @@ form {
     width: 150px;
   }
 
-  .mainHero {
-    background-position: center;
-    grid-column: 1/7;
-    grid-row: 2/6;
-  }
   .mainFooter {
     text-align: center;
   }
 
   /* * =======BEER PAGE========== */
   .pageTitle{
+    background-size: 100%;
     text-align: center;
     line-height: 120px;
     font-size: 150px;
   }
   .subHero {
-    display: none;
-  }
-  .pageTitle {
-    background-size: 100%;
+    background: url(../images/NEW_circleBeer.png) center
+      top 50px / 500px no-repeat;
   }
   .popUpMobileDesc {
     grid-column: 1/-1;
   }
-
-
 
 }
 

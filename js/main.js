@@ -1,4 +1,4 @@
-(() => {
+
 
 let homeArrows = document.querySelectorAll(".slider .arrow"),
 	dots = document.querySelectorAll(".slider .dot"),
@@ -20,15 +20,15 @@ const beerText = [
     [
         [
             "Who The Tuck?",
-            `Tucks Is medicating Cooling pads`,
+            `Tucks is medicating Cooling pads`,
         ],
      [
-         "Why Stubby?",
-         `Classic Feel is stubby `,
+            "Why Stubby?",
+            `Classic Feel is stubby `,
         ],
         [
-        "How Cool is it?",
-         `It makes your butt pain go away`,
+            "How Cool is it?",
+            `It makes your butt pain go away`,
         ]
     ],
     [
@@ -100,17 +100,6 @@ function slider() {
     sliderImg.style.left = `-${movement}vw`;
 }
 
-let video = document.querySelector('.promoVideo video');
-video.currentTime = 15
-function playVideo() {
-    video.currentTime = 0;
-    video.play()
-    playOption.classList.add('hide');
-
-    video.addEventListener('ended', function() {
-        playOption.classList.remove('hide');    
-    });
-}
 
 function showBeer() {  
     let newBeer = this.classList[1]; 
@@ -121,37 +110,37 @@ function showBeer() {
     let beerType = beerText[this.dataset.index];
     let popUpTitle = document.querySelectorAll('.popUp h3');
     let popUpText = document.querySelectorAll(".popUp p");
-
+    
     popUpTitle.forEach(title => 
         title.textContent = beerType[title.parentNode.dataset.place][0]
-    );
-    popUpText.forEach(title => 
-        title.textContent = beerType[title.parentNode.dataset.place][1]
-    );
-}
-
-
-beerArrows.forEach(arrow => arrow.addEventListener("click", 
-    function(){     
-        if (this.classList[1] === 'arrowR') {
-            if (largeBeer.classList[1] === "lagerBG") {
-                largeBeer.classList.replace('lagerBG','lightBG');
-                beerType = beerText[1]
-            }
-            else if (largeBeer.classList[1] === "lightBG") {
-                largeBeer.classList.replace('lightBG','zeroBG');
-                beerType = beerText[2]
-            }
-            else if (largeBeer.classList[1] === "zeroBG") {
-                largeBeer.classList.replace('zeroBG','lagerBG');
-                beerType = beerText[0] 
-            }    
+        );
+        popUpText.forEach(title => 
+            title.textContent = beerType[title.parentNode.dataset.place][1]
+            );
         }
-        else if (this.classList[1] === 'arrowL') {
-            if (largeBeer.classList[1] === "lagerBG") {
-                largeBeer.classList.replace('lagerBG', 'zeroBG');
-                beerType = beerText[2]
+        
+        
+        beerArrows.forEach(arrow => arrow.addEventListener("click", 
+        function(){     
+            if (this.classList[1] === 'arrowR') {
+                if (largeBeer.classList[1] === "lagerBG") {
+                    largeBeer.classList.replace('lagerBG','lightBG');
+                    beerType = beerText[1]
+                }
+                else if (largeBeer.classList[1] === "lightBG") {
+                    largeBeer.classList.replace('lightBG','zeroBG');
+                    beerType = beerText[2]
+                }
+                else if (largeBeer.classList[1] === "zeroBG") {
+                    largeBeer.classList.replace('zeroBG','lagerBG');
+                    beerType = beerText[0] 
+                }    
             }
+            else if (this.classList[1] === 'arrowL') {
+                if (largeBeer.classList[1] === "lagerBG") {
+                    largeBeer.classList.replace('lagerBG', 'zeroBG');
+                    beerType = beerText[2]
+                }
             else if (largeBeer.classList[1] === "lightBG") {
                 largeBeer.classList.replace('lightBG', 'lagerBG');
                 beerType = beerText[0]
@@ -167,39 +156,50 @@ beerArrows.forEach(arrow => arrow.addEventListener("click",
         mobilePopUps.forEach(pum => pum.classList.add('hide'));
         mobilePopUps[0].classList.remove('hide');
     }
-));
-
-function togglePopUp() {
-    let popUp = this.querySelector('.popUp');   
-    if (popUp.classList.length === 1){
-        popUp.classList.add("hide");
-        console.log("Pop Up Hidden");
-    } else {
-        popUp.classList.remove('hide');
-        console.log("Pop Up Shown");
-    }
-    mobilePopUps.forEach(pum => pum.classList.add('hide'));
-    mobilePopUps[this.dataset.index].classList.remove('hide');
-   console.log(beerType);
+    ));
     
-    mobilePopUpTitle.textContent = beerType[this.dataset.index][0]
+    function togglePopUp() {
+        let popUp = this.querySelector('.popUp');   
+        if (popUp.classList.length === 1){
+            popUp.classList.add("hide");
+            console.log("Pop Up Hidden");
+        } else {
+            popUp.classList.remove('hide');
+            console.log("Pop Up Shown");
+        }
+        mobilePopUps.forEach(pum => pum.classList.add('hide'));
+        mobilePopUps[this.dataset.index].classList.remove('hide');
+        console.log(beerType);
+        
+        mobilePopUpTitle.textContent = beerType[this.dataset.index][0]
         mobilePopUpText.textContent = beerType[this.dataset.index][1]
-}
-
-function toggleInquery() {
-    let inqueryChoice = document.querySelector('.inqueryType p');
-    inqueryChoice.textContent = this.textContent;
-}
-
-
-hamburger.addEventListener('click', menuToggle);
-
-homeArrows.forEach(arrow => arrow.addEventListener("click", nextSlide));
-dots.forEach(dot => dot.addEventListener("click", dotColor));
-targets.forEach(target => target.addEventListener('click', togglePopUp));
-smPick.forEach(pick => pick.addEventListener("click", showBeer));
-inqueryType.forEach(type => type.addEventListener("click", toggleInquery));
-
-playOption.addEventListener('click', playVideo);
-
-})();
+    }
+    
+    function toggleInquery() {
+        let inqueryChoice = document.querySelector('.inqueryType p');
+        inqueryChoice.textContent = this.textContent;
+    }
+    
+    
+    hamburger.addEventListener('click', menuToggle);
+    
+    homeArrows.forEach(arrow => arrow.addEventListener("click", nextSlide));
+    dots.forEach(dot => dot.addEventListener("click", dotColor));
+    targets.forEach(target => target.addEventListener('click', togglePopUp));
+    smPick.forEach(pick => pick.addEventListener("click", showBeer));
+    inqueryType.forEach(type => type.addEventListener("click", toggleInquery));
+    
+    playOption.addEventListener('click', playVideo);
+    let video = document.querySelector('.promoVideo video');
+    video.currentTime = 15
+    function playVideo() {
+        video.currentTime = 0;
+        video.play()
+        playOption.classList.add('hide');
+    
+        video.addEventListener('ended', function() {
+            playOption.classList.remove('hide');    
+        });
+    }
+    
+    
