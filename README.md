@@ -16,6 +16,6 @@ CSS
 JS
 
 ### License 
-Tuckers Brewery 2020
+Tucks Brewery 2020
 
 https://docs.google.com/document/d/1ZncgBO2EJYE2zEwhojJznXRlVsQ41HOupKzqsQi6VEE/edit?usp=sharing
