@@ -100,9 +100,10 @@ function slider() {
     sliderImg.style.left = `-${movement}vw`;
 }
 
-
+let video = document.querySelector('.promoVideo video');
+video.currentTime = 15
 function playVideo() {
-    let video = document.querySelector('.promoVideo video');
+    video.currentTime = 0;
     video.play()
     playOption.classList.add('hide');
 
